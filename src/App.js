@@ -36,7 +36,7 @@ function App() {
           // },
         }
         : {
-          primary: blueGrey,
+          primary: amber,
           background: {
             default: "#020B12",
             paper: "#061727",

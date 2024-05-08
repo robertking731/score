@@ -1,13 +1,17 @@
 import * as React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import UserPage from "../pages/UserPage";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Test from "../pages/Test";
+import NotFound from "../pages/Errors/NotFound";
+
 
 function CommonRoutes() {
+    const location = useLocation();
+    const pathName = location.pathname;
     return (
         <Routes>
-            <Route path="/" element={<UserPage></UserPage>}></Route>
-            {/* <Route path="/login" element={<Login></Login>}></Route> */}
-            {/* <Route path="*" element={<Navigate to="/" />} /> */}
+            <Route exact path="/" element={<Test></Test>}></Route>
+            <Route exact path="/not-found" element={<NotFound></NotFound>}></Route>
+            <Route exact path="*" element={<Navigate to="/not-found" />} />
         </Routes>
     );
 }

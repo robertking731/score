@@ -1,6 +1,5 @@
 import { styled, useTheme, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import MuiAppBar from '@mui/material/AppBar';
 
 export const drawerWidth = 240;
 
@@ -12,12 +11,11 @@ export const Logo = styled('div')(({ theme }) => ({
 export const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding: "20px 30px",
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        // marginLeft: 20,
         ...(open && {
 
             transition: theme.transitions.create('margin', {
@@ -63,23 +61,6 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
             width: '20ch',
         },
     },
-}));
-
-export const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-    transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginLeft: -drawerWidth,
-    }),
 }));
 
 export const DrawerHeader = styled('div')(({ theme }) => ({

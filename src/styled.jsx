@@ -3,23 +3,18 @@ import InputBase from '@mui/material/InputBase';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 
-export const drawerWidth = 240;
+export const drawerWidth = 250;
 
 export const TopToolbar = styled(Toolbar)(({ theme }) => ({
-    display:"flex",
-    height:55,
-    backgroundColor:"#041421",
+    minHeight: "55px !important",
+    height:55
 }));
 
 export const Logo = styled('div')(({ theme }) => ({
     display: "flex",
     alignItems: "center",
-    justifyContent:"center",
     "& img": {
         width: 80
-    },
-    "& small": {
-        fontSize:9
     }
 }))
 
@@ -48,10 +43,11 @@ export const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open
 
 export const Search = styled('div')(({ theme }) => ({
     position: 'relative',
+    width:"40%",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: "#0F2A3F",
     '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.white, 0.15),
     },
 }));
 
@@ -86,7 +82,6 @@ export const AppBar = styled(MuiAppBar, {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
     }),
-    backgroundColor:"#041421",
     ...(open && {
         width: `calc(100% - ${drawerWidth}px)`,
         transition: theme.transitions.create(['margin', 'width'], {

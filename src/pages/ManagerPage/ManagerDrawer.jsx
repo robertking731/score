@@ -16,7 +16,8 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import Avatar from '@mui/material/Avatar';
-import { drawerWidth, Logo, DrawerHeader } from "./styled";
+import SiteLogo from '../../components/Layout/SiteLogo';
+import { drawerWidth, Logo, DrawerHeader } from "../../components/Layout/styled";
 
 export default function ManagerDrawer({ children }) {
   const theme = useTheme();
@@ -34,35 +35,26 @@ export default function ManagerDrawer({ children }) {
       <CssBaseline />
       <Drawer
         sx={{
-
+          border:"none",
           '& .MuiDrawer-paper': {
             width: drawerWidth,
+            padding:"3px 20px"
+          },
+          "& .MuiTypography-root,& .MuiListItemIcon-root":{
+            color:"#A2B1BF"
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
-          {/* <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton> */}
-          <Logo>
-            <img src="/images/GFA_logo.svg" />
-            <h6>
-              Golden
-              <br />
-              FUTSAL ASSOCIATION
-            </h6>
-          </Logo>
-        </DrawerHeader>
+       <SiteLogo></SiteLogo>
         <Divider />
         <List sx={{ textAlign: "center" }}>
-          <Avatar alt="Remy Sharp" src="/images/avatar/manager.jpg" sx={{ margin: "auto", width: 100, height: 100 }} />
-
-          <Typography variant="h6" gutterBottom>
+          <Avatar alt="Remy Sharp" src="/images/avatar/manager.jpg" sx={{ margin: "auto", width: 90, height: 90,marginBottom:1 }} />
+          <h5>
             courtney Henry
-          </Typography>
+          </h5>
           <Typography variant="subtitle1" gutterBottom>
             Manager
           </Typography>
@@ -71,8 +63,8 @@ export default function ManagerDrawer({ children }) {
         <List>
           {menus.map((item, index) => (
             <ListItem key={index} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
+              <ListItemButton sx={{ margin: "2px",padding:"5px", "& .MuiListItemIcon-root": { minWidth: 35 } }}>
+                <ListItemIcon >
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText primary={item.text} />
@@ -84,7 +76,7 @@ export default function ManagerDrawer({ children }) {
         <List>
           {menuSetting.map((item, index) => (
             <ListItem key={index} disablePadding>
-              <ListItemButton>
+              <ListItemButton sx={{ margin: "2px",padding:"5px", "& .MuiListItemIcon-root": { minWidth: 35 } }}>
                 <ListItemIcon>
                   {item.icon}
                 </ListItemIcon>

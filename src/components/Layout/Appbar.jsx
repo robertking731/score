@@ -11,31 +11,38 @@ import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import Fab from '@mui/material/Fab';
 
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
+import ScoreboardOutlinedIcon from '@mui/icons-material/ScoreboardOutlined';
+import CollectionsBookmarkOutlinedIcon from '@mui/icons-material/CollectionsBookmarkOutlined';
+import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
 
-import { drawerWidth, Logo, Main, Search, SearchIconWrapper, StyledInputBase, AppBar, DrawerHeader } from "./styled";
+import MoreIcon from '@mui/icons-material/MoreVert';
+import TuneIcon from '@mui/icons-material/Tune';
+
+import CustomTabs from "../CustomTabs";
+import { AppBar, TopToolbar } from "./styled";
+import { Avatar } from '@mui/material';
 
 export default function PersistentDrawerRight({ children }) {
+
+
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const topMenu = [
+    { text: "LIVE SCORES", icon: <ScoreboardOutlinedIcon /> },
+    { text: "FAVORITES", icon: <CollectionsBookmarkOutlinedIcon /> },
+    { text: "NEWS", icon: <NewspaperOutlinedIcon /> },
+  ];
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -143,43 +150,15 @@ export default function PersistentDrawerRight({ children }) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            sx={{ ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-
-          <Box sx={{ flexGrow: 1 }} />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
+        <TopToolbar >
+          <Box sx={{ flex: 1 }} />
+          <CustomTabs sx={{ width: "auto !important" }} tabData={topMenu} />
+          <Box sx={{ flex: 1 }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: "center" }}>
+            <Fab size="small" aria-label="add" sx={{ margin: 1, backgroundColor: "#303D46" }}>
+              <SearchIcon sx={{ color: "#738089" }} />
+            </Fab>
+            <Avatar
               size="large"
               edge="end"
               aria-label="account of current user"
@@ -187,9 +166,12 @@ export default function PersistentDrawerRight({ children }) {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              src="/images/avatar/manager.jpg"
             >
-              <AccountCircle />
-            </IconButton>
+            </Avatar>
+            <Fab size="small" aria-label="setting" sx={{ margin: 1, backgroundColor: "#303D46" }}>
+              <TuneIcon sx={{ color: "#738089" }} />
+            </Fab>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -203,7 +185,7 @@ export default function PersistentDrawerRight({ children }) {
               <MoreIcon />
             </IconButton>
           </Box>
-        </Toolbar>
+        </TopToolbar>
       </AppBar>
     </Box>
   );
