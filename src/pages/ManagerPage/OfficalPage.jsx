@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Typography from '@mui/material/Typography';
-import { clsx } from "clsx";
 import ManagerDrawer from "./ManagerDrawer";
-import CustomTab from "../../components/CustomTabs"
 import CustomEditTable from "../../components/CustomEditTable";
 import Avatar from '@mui/material/Avatar';
 import EditIcon from '@mui/icons-material/Edit';

@@ -1,30 +1,21 @@
 import * as React from 'react';
-import { styled, useTheme, alpha } from '@mui/material/styles';
+import {useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import SportsSoccerOutlinedIcon from '@mui/icons-material/SportsSoccerOutlined';
-
-import Avatar from '@mui/material/Avatar';
 import SiteLogo from '../../components/Layout/SiteLogo';
 import SearchIcon from '@mui/icons-material/Search';
-import { Search, SearchIconWrapper, drawerWidth, StyledInputBase, AppBar, TopToolbar, Main, DrawerHeader } from "../../styled";
+import { Search, SearchIconWrapper, drawerWidth, StyledInputBase } from "../../styled";
 
 
 export default function UserDrawer({ children }) {
-  const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const competitionMenus = [
     { text: "Premier League", subtext: "England", icon: "https://static.livescore.com/i2/fh/england.jpg" },

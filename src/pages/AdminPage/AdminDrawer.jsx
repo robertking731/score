@@ -2,7 +2,6 @@ import * as React from 'react';
 import { styled, useTheme, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
@@ -19,7 +18,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import Avatar from '@mui/material/Avatar';
 import SiteLogo from '../../components/Layout/SiteLogo';
-import { drawerWidth, Logo, DrawerHeader } from "../../components/Layout/styled";
+import { drawerWidth } from "../../components/Layout/styled";
 
 export default function AdminDrawer({ children }) {
   const theme = useTheme();
