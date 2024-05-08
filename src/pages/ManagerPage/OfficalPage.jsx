@@ -117,9 +117,9 @@ function OfficalPage() {
                     setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
                 };
 
-                const handleDeleteClick = (id) => () => {
-                    setRows(rows.filter((row) => row.id !== id));
-                };
+                // const handleDeleteClick = (id) => () => {
+                //     setRows(rows.filter((row) => row.id !== id));
+                // };
 
                 const handleCancelClick = (id) => () => {
                     setRowModesModel({
@@ -127,10 +127,10 @@ function OfficalPage() {
                         [id]: { mode: GridRowModes.View, ignoreModifications: true },
                     });
 
-                    const editedRow = rows.find((row) => row.id === id);
-                    if (editedRow.isNew) {
-                        setRows(rows.filter((row) => row.id !== id));
-                    }
+                    // const editedRow = rows.find((row) => row.id === id);
+                    // if (editedRow.isNew) {
+                    //     setRows(rows.filter((row) => row.id !== id));
+                    // }
                 };
                 if (isInEditMode) {
                     return [
@@ -163,7 +163,7 @@ function OfficalPage() {
                     <GridActionsCellItem
                         icon={<DeleteIcon />}
                         label="Delete"
-                        onClick={handleDeleteClick(id)}
+                        // onClick={handleDeleteClick(id)}
                         color="inherit"
                     />,
                 ];

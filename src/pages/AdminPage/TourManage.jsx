@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { clsx } from "clsx";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
+import SearchIcon from '@mui/icons-material/Search';
 import AdminDrawer from "./AdminDrawer";
-import CustomTab from "../../components/CustomTabs"
 import CustomBreadcrumbs from "../../components/CustomBreadcrumbs";
+import CustomEditTable from "../../components/CustomEditTable";
 
-import { Search, SearchIconWrapper, StyledInputBase, AppBar, TopToolbar, Main, DrawerHeader } from "../../styled";
+import { Search, SearchIconWrapper, StyledInputBase, Main, DrawerHeader } from "../../styled";
 import {
-    randomCreatedDate,
     randomTraderName,
     randomId,
     randomArrayItem,
@@ -18,10 +18,8 @@ import {
 } from '@mui/x-data-grid-generator';
 import {
     GridRowModes,
-    DataGrid,
     GridToolbarContainer,
     GridActionsCellItem,
-    GridRowEditStopReasons,
 } from '@mui/x-data-grid';
 
 
@@ -79,6 +77,7 @@ const initialRows = [
 
 function TourManage() {
     const [rowModesModel, setRowModesModel] = React.useState({});
+    // const [rows, setRows] = React.useState({});
     const columns = [
         {
             field: 'name', headerName: 'TOURNAMENT', width: 220, editable: true
@@ -134,7 +133,7 @@ function TourManage() {
                 };
 
                 const handleDeleteClick = (id) => () => {
-                    setRows(rows.filter((row) => row.id !== id));
+                    // setRows(rows.filter((row) => row.id !== id));
                 };
 
                 const handleCancelClick = (id) => () => {
@@ -143,10 +142,10 @@ function TourManage() {
                         [id]: { mode: GridRowModes.View, ignoreModifications: true },
                     });
 
-                    const editedRow = rows.find((row) => row.id === id);
-                    if (editedRow.isNew) {
-                        setRows(rows.filter((row) => row.id !== id));
-                    }
+                    // const editedRow = rows.find((row) => row.id === id);
+                    // if (editedRow.isNew) {
+                    //     setRows(rows.filter((row) => row.id !== id));
+                    // }
                 };
                 if (isInEditMode) {
                     return [
@@ -199,33 +198,28 @@ function TourManage() {
 }
 
 function EditToolbar(props) {
-    const { setRows, setRowModesModel } = props;
+    // const { setRows, setRowModesModel } = props;
     const [searched, setSearched] = React.useState("");
 
-    const handleClick = () => {
-        const id = randomId();
-        setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
-        setRowModesModel((oldModel) => ({
-            ...oldModel,
-            [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-        }));
-    };
+    // const handleClick = () => {
+    //     const id = randomId();
+    //     setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
+    //     setRowModesModel((oldModel) => ({
+    //         ...oldModel,
+    //         [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
+    //     }));
+    // };
 
-    const requestSearch = (e) => {
-        const searchedVal = e.target.value;
-        const filteredRows = initialRows.filter((row) => {
-            setSearched(searchedVal);
-            return row.name.toLowerCase().includes(searchedVal.toLowerCase());
-        });
-        // setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
+    // const requestSearch = (e) => {
+    //     const searchedVal = e.target.value;
+    //     const filteredRows = initialRows.filter((row) => {
+    //         setSearched(searchedVal);
+    //         return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+    //     });
+    //     // setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
 
-        setRows((oldRows) => [...filteredRows]);
-    };
-
-    const cancelSearch = () => {
-        setSearched("");
-        requestSearch("");
-    };
+    //     setRows((oldRows) => [...filteredRows]);
+    // };
 
     return (
         <GridToolbarContainer sx={{ display: "flex", justifyContent: "space-between", margin: "8px 0" }}>
@@ -237,11 +231,13 @@ function EditToolbar(props) {
                     placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
                     value={searched}
-                    onChange={requestSearch}
+                    // onChange={requestSearch}
                 // onCancelSearch={() => cancelSearch()}
                 />
             </Search>
-            <button className='pull-btn' color="primary" onClick={handleClick}>
+            <button className='pull-btn' color="primary" 
+            >
+            {/* onClick={handleClick}> */}
                 create New Tournament
             </button>
         </GridToolbarContainer>

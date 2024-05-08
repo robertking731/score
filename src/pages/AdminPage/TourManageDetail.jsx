@@ -145,7 +145,7 @@ function TourManageDetail() {
                 };
 
                 const handleDeleteClick = (id) => () => {
-                    setRows(rows.filter((row) => row.id !== id));
+                    // setRows(rows.filter((row) => row.id !== id));
                 };
 
                 const handleCancelClick = (id) => () => {
@@ -154,10 +154,10 @@ function TourManageDetail() {
                         [id]: { mode: GridRowModes.View, ignoreModifications: true },
                     });
 
-                    const editedRow = rows.find((row) => row.id === id);
-                    if (editedRow.isNew) {
-                        setRows(rows.filter((row) => row.id !== id));
-                    }
+                    // const editedRow = rows.find((row) => row.id === id);
+                    // if (editedRow.isNew) {
+                        // setRows(rows.filter((row) => row.id !== id));
+                    // }
                 };
                 if (isInEditMode) {
                     return [
