@@ -9,8 +9,8 @@ function Test() {
                 <ul>
                     manager page
                     <ul>
-                        <li><a><Link to="/manager1">manager1</Link></a></li>
-                        <li><a><Link to="/manager2">manager2</Link></a></li>
+                        <li><Link to="/manager1">manager1</Link></li>
+                        <li><Link to="/manager2">manager2</Link></li>
                     </ul>
                 </ul>
                 <ul>
@@ -23,8 +23,8 @@ function Test() {
                 <ul>
                     user page
                     <ul>
-                        <li><a><Link to="/user1">user1</Link></a></li>
-                        <li><a><Link to="/user2">user2</Link></a></li>
+                        <li><Link to="/user1">user1</Link></li>
+                        <li><Link to="/user2">user2</Link></li>
                     </ul>
                 </ul>
 

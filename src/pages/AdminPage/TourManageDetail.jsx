@@ -243,7 +243,7 @@ function TourManageDetail() {
                     <li className="nav-item" key={3}>
                         <a className="nav-link" href="#">MATCHES</a>
                     </li>
-                    <li className="nav-item" key={3}>
+                    <li className="nav-item" key={4}>
                         <a className="nav-link" href="#">OFFICAL TEAM</a>
                     </li>
                 </ul>

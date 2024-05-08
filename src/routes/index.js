@@ -28,7 +28,6 @@ function MainRoutes() {
     const [open, setOpen] = useState(true);
     const url = useLocation();
     const pathName = url.pathname;
-    console.log(pathName)
     useEffect(() => {
         setTimeout(() => {
             setOpen(false)
