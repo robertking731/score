@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { clsx } from "clsx";
 import AdminDrawer from "./AdminDrawer";
 import CustomEditTable from "../../components/CustomEditTable";
@@ -197,10 +197,6 @@ function TourManageDetail() {
             },
         },
     ];
-    const contentMenu = [
-        { text: "All Squad" },
-        { text: "Tournament A" },
-        { text: "Tournament B" }];
     return (
         <Main open={true}>
             <DrawerHeader />

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { styled, useTheme, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -20,8 +19,7 @@ import Avatar from '@mui/material/Avatar';
 import SiteLogo from '../../components/Layout/SiteLogo';
 import { drawerWidth } from "../../components/Layout/styled";
 
-export default function AdminDrawer({ children }) {
-  const theme = useTheme();
+export default function AdminDrawer() {
   const [open, setOpen] = React.useState(true);
   const menus = [
     { text: "Tournament Management", icon: <EmojiEventsOutlinedIcon /> },

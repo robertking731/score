@@ -42,7 +42,7 @@ export default function BasicTabs({ tabData, borderShow, tabWidth }) {
     <Box sx={{ width: 'auto' }}>
       <Box>
         <Tabs
-          indicatorColor={(borderShow == false || !borderShow) ? '' : "primary"}
+          indicatorColor={(borderShow === false || !borderShow) ? '' : "primary"}
           sx={{
             "& .Mui-selected": {
               backgroundColor: !borderShow && "#0D1B28"

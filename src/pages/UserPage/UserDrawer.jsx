@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,7 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Search, SearchIconWrapper, drawerWidth, StyledInputBase } from "../../styled";
 
 
-export default function UserDrawer({ children }) {
+export default function UserDrawer() {
   const [open, setOpen] = React.useState(true);
   const competitionMenus = [
     { text: "Premier League", subtext: "England", icon: "https://static.livescore.com/i2/fh/england.jpg" },

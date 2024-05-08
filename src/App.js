@@ -4,22 +4,12 @@ import store from "./redux/store"
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { purple, amber, grey, deepOrange, orange, blueGrey } from '@mui/material/colors';
+import { amber, grey } from '@mui/material/colors';
 
 function App() {
 
   const [mode, setMode] = React.useState('dark');
-  const colorMode = React.useMemo(
-    () => ({
-      // The dark mode switch would invoke this method
-      toggleColorMode: () => {
-        setMode((prevMode) =>
-          prevMode === 'light' ? 'dark' : 'light',
-        );
-      },
-    }),
-    [],
-  );
+
 
   // Update the theme only if the mode changes
   const getDesignTokens = (mode) => ({
@@ -51,7 +41,6 @@ function App() {
   });
 
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-  const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
   return (
     // <ColorModeContext.Provider value={colorMode}>

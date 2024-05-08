@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes } from "react-router-dom";
 import ManagerPage from "../pages/ManagerPage";
 
 function ManagerRoutes() {

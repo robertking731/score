@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import ManagerDrawer from "./ManagerDrawer";
 import CustomEditTable from "../../components/CustomEditTable";
 import Avatar from '@mui/material/Avatar';
@@ -8,7 +8,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import { Search, SearchIconWrapper, StyledInputBase, AppBar, TopToolbar, Main, DrawerHeader } from "../../styled";
+import { Search, SearchIconWrapper, StyledInputBase,Main, DrawerHeader } from "../../styled";
 import {
     randomCreatedDate,
     randomTraderName,
@@ -18,16 +18,10 @@ import {
 } from '@mui/x-data-grid-generator';
 import {
     GridRowModes,
-    DataGrid,
     GridToolbarContainer,
     GridActionsCellItem,
-    GridRowEditStopReasons,
 } from '@mui/x-data-grid';
 
-const roles = ['Market', 'Finance', 'Development'];
-const randomRole = () => {
-    return randomArrayItem(roles);
-};
 
 const initialRows = [
     {

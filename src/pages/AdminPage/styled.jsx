@@ -1,4 +1,4 @@
-import { styled, useTheme, alpha } from '@mui/material/styles';
+import { styled,alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 
 export const drawerWidth = 240;

@@ -6,7 +6,6 @@ import NotFound from "../pages/Errors/NotFound";
 
 function CommonRoutes() {
     const location = useLocation();
-    const pathName = location.pathname;
     return (
         <Routes>
             <Route exact path="/" element={<Test></Test>}></Route>

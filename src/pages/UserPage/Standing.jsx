@@ -68,8 +68,6 @@ const initialRows = [
 
 
 function Standing() {
-    const [rowModesModel, setRowModesModel] = React.useState({});
-    var NoFrame = <span>ok</span>;
     const columns = [
         {
             field: 'id', headerName: '#', width: 30, editable: false, renderCell: (params) => {
@@ -147,10 +145,6 @@ function Standing() {
             editable: false,
         }
     ];
-    const contentMenu = [
-        { text: "All Squad" },
-        { text: "Tournament A" },
-        { text: "Tournament B" }];
     return (
         <Main open={true}>
             <DrawerHeader />
